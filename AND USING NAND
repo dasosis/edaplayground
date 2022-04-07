@@ -12,9 +12,8 @@ module testing;
   reg A,B;
   wire Y,Y1;
   integer i;
-  NANDgate nand_gt1(Y1,A,A);
-  NANDgate nand_gt1(Y2,B,B);
-  NANDgate nand_gt2(Y,Y1,Y2);
+  NANDgate nand_gt1(Y,A,B);
+  NANDgate nand_gt2(Y1,Y,Y);
   
   initial
     begin
