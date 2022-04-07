@@ -1,0 +1,43 @@
+// Code your design here
+module NANDgate(Y,A,B);
+  input A,B;
+  output Y;
+  nand(Y,A,B);
+endmodule
+
+
+// Code your testbench here
+// or browse Examples
+module testing;
+  reg A,B;
+  wire Y,Y1;
+  integer i;
+  NANDgate nand_gt1(Y1,A,A);
+  NANDgate nand_gt2(Y2,B,B);
+  NANDgate nand_gt3(Y,Y1,Y2);
+  
+  initial
+    begin
+      A = 0; B = 0;
+    end
+  
+  initial 
+    begin
+      for(i=1; i<4; i=i+1)
+        begin
+          #10 {A,B} = i;
+        end
+      /*#10 A = 0; B = 1;
+      #10 A = 1; B = 0;
+      #10 A = 1; B = 1;*/
+    end 
+  
+  initial 
+    begin 
+      $monitor ("%t | A = %d | B = %d | Y1 = %d", $time, A, B, Y);
+      $dumpfile("dump.vcd");
+      $dumpvars(1);
+      #50 $finish;
+    end
+endmodule
+      
