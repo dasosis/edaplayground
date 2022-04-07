@@ -4,7 +4,7 @@ module NANDgate(Y,A,B);
   output Y;
   nand(Y,A,B);
 endmodule
-
+  
 
 // Code your testbench here
 // or browse Examples
