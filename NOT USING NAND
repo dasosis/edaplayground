@@ -1,8 +1,8 @@
 // Code your design here
-module NANDgate(Y,A,B);
-  input A,B;
+module NANDgate(Y,A);
+  input A;
   output Y;
-  nand(Y,A,B);
+  nand(Y,A,A);
 endmodule
   
 
